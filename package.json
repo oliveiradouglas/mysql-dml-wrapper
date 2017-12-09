@@ -1,0 +1,15 @@
+{
+  "name": "mysql-dml-wrapper",
+  "version": "1.0.0",
+  "description": "Simple wrapper for mysql DML.",
+  "main": "index.js",
+  "author": "Douglas Oliveira",
+  "license": "GPL",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliveiradouglas/mysql-dml-wrapper.git"
+  },
+  "dependencies": {
+    "mysql": "2.15.0"
+  }
+}
