@@ -67,8 +67,7 @@ async function someMethod() {
 * ```select```: 
     - table // Table
     - select // Fields to select, default '*'
-    - whereAnd // Array to do clause where and
-    - whereOr // Array to do clause where or
+    - complement // Any query complement, as where, joins, group by, etc
 
 * ```insert```
     - table // Table
