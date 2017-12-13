@@ -70,6 +70,12 @@ class Wrapper {
     }
 
     static async update(table, set, where) {
+        where = (
+            typeof where === 'object' ? 
+            where : 
+            { id: where }
+        );
+
         return runQuery(
             `UPDATE ${table} SET ? WHERE ?`, 
             [ set, where ]
@@ -77,6 +83,12 @@ class Wrapper {
     }
 
     static async delete(table, where) {
+        where = (
+            typeof where === 'object' ? 
+            where : 
+            { id: where }
+        );
+
         return runQuery(
             `DELETE FROM ${table} WHERE ?`, 
             where
