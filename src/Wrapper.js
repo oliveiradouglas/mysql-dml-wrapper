@@ -1,7 +1,7 @@
 'use strict'
 
 const mysql         = require('mysql');
-let _connectionData = {};
+let _connectionData = null;
 let _connection     = null;
 
 class Wrapper {
