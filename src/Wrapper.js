@@ -51,20 +51,16 @@ class Wrapper {
     }
 
     static async update(table, set, where) {
-        _formatWhereObject(where);
-
         return _runQuery(
             `UPDATE ${table} SET ? WHERE ?`, 
-            [ set, where ]
+            [ set, _formatWhereObject(where) ]
         );
     }
 
     static async delete(table, where) {
-        _formatWhereObject(where);
-
         return _runQuery(
             `DELETE FROM ${table} WHERE ?`, 
-            where
+            _formatWhereObject(where)
         );
     }
 }
@@ -117,7 +113,7 @@ function _handlerResult(err, result, reject, resolve, mustCloseConnection) {
 }
 
 function _formatWhereObject(where) {
-    where = (
+    return (
         typeof where === 'object' ? 
         where : 
         { id: where }
